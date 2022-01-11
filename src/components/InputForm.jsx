@@ -1,17 +1,18 @@
 import { Component } from "react/cjs/react.production.min";
 import { Navigate } from "react-router-dom";
-import { currentSearch as search, getWylot } from "../scripts/search";
+import { currentSearch as search, getBudzetMaksymalny, getBudzetMinimalny, getLiczbaOsob, getMiejscowosc, getPowrot, getWylot } 
+  from "../scripts/search";
 
 class InputForm extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       wylot:  getWylot(),
-      powrot:  search.powrot,
-      miejscowosc:  search.miejscowosc,
-      liczbaOsob: search.liczbaOsob,
-      budzetMinimalny:  search.budzetMinimalny,
-      budzetMaksymalny:  search.budzetMaksymalny,
+      powrot:  getPowrot(),
+      miejscowosc:  getMiejscowosc(),
+      liczbaOsob: getLiczbaOsob(),
+      budzetMinimalny:  getBudzetMinimalny(),
+      budzetMaksymalny:  getBudzetMaksymalny(),
       submitSuccess: false
     }
     this.handleChange = this.handleChange.bind(this);
@@ -58,7 +59,7 @@ class InputForm extends Component {
               value={this.state.powrot}
               onChange={this.handleChange}
               name="powrot"
-              placeholder="Adres e-mail"
+              placeholder="Powrót"
             />
             <input className="miejscowosc"
               type="text"
@@ -113,7 +114,7 @@ class InputForm extends Component {
               value={this.state.powrot}
               onChange={this.handleChange}
               name="powrot"
-              placeholder="Adres e-mail"
+              placeholder="Powrót"
             />
             <input className="miejscowosc"
               type="text"

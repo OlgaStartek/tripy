@@ -38,7 +38,7 @@ const CardListPlanning = ({currentPage,attraction,hotels,flights}) => {
     return (
       <div className="card-list card-list-planning">
         <div className="container">
-          {loty.map( e => <Card display="planning" key={e.getKey()} pointer={e} /> )}
+          {loty.map( e =>  <Card display="planning" key={e.getKey()} pointer={e} /> )}
         </div>
       </div>
      );
@@ -47,7 +47,10 @@ const CardListPlanning = ({currentPage,attraction,hotels,flights}) => {
     return (
       <div className="card-list card-list-planning">
         <div className="container">
-          {hotele.map( e => <Card display="planning" key={e.getKey()} pointer={e} /> )}
+          { hotele.map( e => <Card display="planning" key={e.getKey()} pointer={e} /> )
+          /* {hotele.map( e.price < search.getBudzetMaksymalny(),  
+            e.place === search.getMiejscowosc() && <Card display="planning" key={e.getKey()} pointer={e} /> )} 
+            <---- cos takiego? */}
         </div>
       </div>
      );
